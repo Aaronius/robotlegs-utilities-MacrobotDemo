@@ -52,10 +52,10 @@ package org.robotlegs.utilities.macrobot.sample.commands
 			parallel2.addCommandInstance(new CommandE());
 			
 			var sequence:SequenceCommand = new SequenceCommand();
-			// This sequence command is set to atomic = true which means if one command fails
-			// then it will not execute subsequence commands.  By default, atomic = false.
+			// This sequence command is set to atomic = false which means if one command fails
+			// then it will not execute subsequence commands.  By default, atomic = true.
 			// Command F is set to fail, so Command G will not be executed.
-			sequence.atomic = true;
+			sequence.atomic = false;
 			sequence.addCommandInstance(new CommandF());
 			sequence.addCommandInstance(new CommandG());
 			parallel2.addCommandInstance(sequence);
